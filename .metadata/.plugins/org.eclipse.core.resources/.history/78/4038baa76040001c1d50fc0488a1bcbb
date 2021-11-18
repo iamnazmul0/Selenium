@@ -1,0 +1,29 @@
+import excelUtility.Xls_Reader;
+
+public class ParameterizTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Xls_Reader reader = new Xls_Reader("C:\\Users\\support Pc\\Documents\\company.xlsx");
+		int rowCount = reader.getRowCount("Sheet1");
+		
+		for(int i=2;i<=rowCount;i++) {
+			String firstName = reader.getCellData("Sheet1","Company", i);
+			System.out.println(firstName);
+			
+			String Location = reader.getCellData("Sheet1","Location",i);
+			System.out.println(Location);
+			 
+			String UserName = reader.getCellData("Sheet1","UserName",i);
+			System.out.println(UserName);
+			
+			String Password = reader.getCellData("Sheet1","Password",i);
+			System.out.println(Password);
+			
+		}
+
+
+	}
+
+}

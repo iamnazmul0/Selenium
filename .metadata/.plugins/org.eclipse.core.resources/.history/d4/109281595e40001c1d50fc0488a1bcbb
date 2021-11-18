@@ -1,0 +1,18 @@
+import excelUtility.Xls_Reader;
+
+public class ParameterizTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Xls_Reader reader = new Xls_Reader("C:\\Users\\support Pc\\Documents\\company.xlsx");
+		int rowCount = reader.getRowCount("Sheet1");
+		
+		for(int i=2;i<=rowCount;i++) {
+			
+		}
+
+
+	}
+
+}

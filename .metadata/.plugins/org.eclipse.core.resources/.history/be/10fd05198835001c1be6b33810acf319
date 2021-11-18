@@ -1,0 +1,31 @@
+package abc;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ABC {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","D:\\selenium\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://43.245.118.130:8022/Account/LogOn");
+		driver.findElement(By.id("CompanyId")).sendKeys("Orient Button Ltd");
+		driver.findElement(By.id("LocationId")).sendKeys("Head Office");
+
+		driver.findElement(By.id("username")).sendKeys("OAdmin");
+		driver.findElement(By.id("password")).sendKeys("DATABIZ33305");
+		//driver.findElement(By.xpath("//*[@id=\"organic-div\"]/form/div[3]/button")).click();
+		//String u=driver.getCurrentUrl();
+		//if(u.equals("https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin"))
+		//{
+		//	System.out.println("Test Case passed ");
+		//}
+	    //else {
+		//	System.out.println("Test Case failed");
+		//}
+		//driver.close();
+	
+	}
+
+}

@@ -1,0 +1,48 @@
+package com.datadriven.test;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import excelUtility.Xls_Reader;
+
+public class DataDrivenTest {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		// TODO Auto-generated method stub
+	
+		
+		Xls_Reader reader = new Xls_Reader("C:\\Users\\support Pc\\Documents\\company.xlsx");
+		
+		
+		String Company = reader.getCellData("Sheet1","Company",2);
+		System.out.println(Company);
+		
+		String Location = reader.getCellData("Sheet1","Location",2);
+		System.out.println(Location);
+		
+		String UserName = reader.getCellData("Sheet1","UserName",2);
+		System.out.println(UserName);
+		
+		String Password = reader.getCellData("Sheet1","Password",2);
+		System.out.println(Password);
+		
+		
+		System.setProperty("webdriver.chrome.driver","D:\\selenium\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://43.245.118.130:8022/Account/LogOn");
+		Thread.sleep(5000);
+		
+//		WebElement dd_Company = driver.findElement(By.xpath("//select[@id='CompanyId']/following-sibling::span/a[@title='Show All']/span[1]"));
+//		dd_Company.click();
+//		System.out.println("Click on Company drop down...!!!");
+//		
+//		driver.findElement(By.xpath("//li/div[text()='Orient Button Ltd']")).sendKeys(Company);
+		
+	
+   }
+
+}

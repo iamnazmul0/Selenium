@@ -1,0 +1,60 @@
+package abc;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class OpenBrowser {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		// TODO Auto-generated method stub
+	
+		System.setProperty("webdriver.chrome.driver","D:\\selenium\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://43.245.118.130:8022/Account/LogOn");
+		Thread.sleep(5000);
+		System.out.println("Browser Opend and URL accessed SuccessFully...!!!");
+		
+		WebElement dd_Company = driver.findElement(By.xpath("//select[@id='CompanyId']/following-sibling::span/a[@title='Show All']/span[1]"));
+		dd_Company.click();
+		System.out.println("Click on Company drop down...!!!");
+		
+		
+		WebElement text_OrintButtonLtd = driver .findElement(By.xpath("//li/div[text()='Orient Button Ltd']"));
+		text_OrintButtonLtd.click();
+		System.out.println("Selected Option Orient button ltd from company drop down...!!!");
+		
+		Thread.sleep(500);
+		
+		
+		WebElement dd_Location = driver.findElement(By.xpath("//select[@id='LocationId']/following-sibling::span/a[@title='Show All']/span[1]"));
+		dd_Location.click();
+		System.out.println("Click on Location drop down...!!!");
+		Thread.sleep(2000);
+		
+		WebElement text_Factory =driver.findElement(By.xpath("//li/div[text()='Factory']"));
+		text_Factory.click();
+		System.out.println("Selected Option Factory from Location drop down...!!!");
+		
+		WebElement text_HeadOffice = driver.findElement(By.xpath("//li/div[text()='Head Office']"));
+		text_HeadOffice.click();
+		System.out.println("Selected Option Head Office from Location drop down...!!!");
+
+
+		driver.findElement(By.id("UserName")).sendKeys("OAdmin");
+		driver.findElement(By.id("Password")).sendKeys("DATABIZ33305");
+		
+		
+		driver.findElement(By.xpath("//*[@id=\"btnLogIn\"]")).click();
+		System.out.println("Log In SuccessFul ...!!!");
+		
+		 driver.close();
+
+	
+
+	}
+
+}

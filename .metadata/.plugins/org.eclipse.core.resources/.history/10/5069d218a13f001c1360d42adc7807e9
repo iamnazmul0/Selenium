@@ -1,0 +1,28 @@
+package com.datadriven.test;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import excelUtility.Xls_Reader;
+
+public class DataDrivenTest {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		// TODO Auto-generated method stub
+	
+//		System.setProperty("webdriver.chrome.driver","D:\\selenium\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+		
+		Xls_Reader reader = new Xls_Reader("C:\\Users\\support Pc\\Documents\\company.xlsx");
+		
+		String Port = reader.getCellData("Sheet1","Port",2);
+		System.out.println(Port);
+		
+		
+		
+	
+   }
+
+}

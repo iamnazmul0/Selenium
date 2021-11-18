@@ -1,0 +1,24 @@
+package DataDriven;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","D:\\selenium\\chromedriver.exe");
+		
+		//WebDriver driver = new ChromeDriver();
+		//driver .get("http://43.245.118.130:8022/Account/LogOn");
+		FileInputStream=new FileInputStream("C:\\Users\\support Pc\\Documents\\Log.xlsx");
+		
+		 
+ 
+		
+		
+
+
+	}
+
+}
